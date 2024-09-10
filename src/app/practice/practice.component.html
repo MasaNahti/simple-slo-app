@@ -1,0 +1,11 @@
+<!-- src/app/practice/practice.component.html -->
+<div class="container">
+    <h1>Slovene Language Practice</h1>
+    <p>Fill in the missing word:</p>
+  
+    <p><strong>{{ sloveneWords.join(' ') }}</strong></p>
+    <p>Hint: {{ hint }}</p>
+  
+    <input [(ngModel)]="userInput" placeholder="Enter the missing word" />
+    <button (click)="checkAnswer()">Check</button>
+  </div>  
