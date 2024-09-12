@@ -18,6 +18,7 @@ export class PracticeComponent implements OnInit {
   missingWord: string = '';
   userInput: string = '';
   hint: string = '';
+  punctuation: string = '';
 
   constructor(private http: HttpClient) {}
 
@@ -28,11 +29,30 @@ export class PracticeComponent implements OnInit {
     });
   }
 
+  splitPunctuation(sentence: string) {
+    // Check if the string ends with a period, question mark, or exclamation mark
+    const punctuation = /[.!?]$/;
+    
+    // Extract the punctuation (if it exists) and store it in a variable
+    const lastChar = punctuation.test(sentence) ? sentence.slice(-1) : '';
+    
+    // Remove the punctuation from the original string
+    const strippedSentence = punctuation.test(sentence) ? sentence.slice(0, -1) : sentence;
+    
+    return { sentence: strippedSentence, punctuation: lastChar };
+}
+
+
   loadNewSentence(): void {
     const randomIndex = Math.floor(Math.random() * this.translations.length);
     this.currentTranslation = this.translations[randomIndex];
 
-    this.sloveneWords = this.currentTranslation.slovene.split(' ');
+    let splitPunctuation, strippedTranslation, punctuation;
+    splitPunctuation = this.splitPunctuation(this.currentTranslation.slovene);
+    strippedTranslation = splitPunctuation["sentence"];
+    this.punctuation = splitPunctuation["punctuation"];
+    
+    this.sloveneWords = strippedTranslation.split(' ');
     const randomWordIndex = Math.floor(Math.random() * this.sloveneWords.length);
     this.missingWord = this.sloveneWords[randomWordIndex];
 
@@ -46,7 +66,7 @@ export class PracticeComponent implements OnInit {
       alert('Correct!');
       this.loadNewSentence();
     } else {
-      alert(`Incorrect. The correct word was: ${this.missingWord}`);
+      alert(`Incorrect. The correct word was: "${this.missingWord}"`);
     }
   }
 }
