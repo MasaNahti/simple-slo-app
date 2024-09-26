@@ -1,0 +1,12 @@
+/* src/app/app.component.css */
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.menu-button {
+  display: inline; 
+}

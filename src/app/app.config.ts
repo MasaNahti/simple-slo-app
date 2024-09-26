@@ -1,17 +1,16 @@
 // src/app/app.config.ts
-
-import { provideRouter } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { importProvidersFrom } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { PracticeComponent } from './practice/practice.component';
+import { provideHttpClient } from '@angular/common/http';
+import { routes } from './app.routes';
 
 export const appConfig = {
   providers: [
-    provideRouter([
-      { path: '', component: PracticeComponent }
-    ]),
+    provideRouter(routes, withComponentInputBinding()),
     provideHttpClient(),
-    importProvidersFrom(FormsModule),  // Import FormsModule here for ngModel
+    provideAnimations(), // This is sufficient for enabling animations
+    importProvidersFrom(FormsModule),
   ],
 };
