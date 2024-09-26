@@ -2,10 +2,14 @@
 <div class="container">
     <h1>Slovene Language Practice</h1>
     <p>Fill in the missing word:</p>
+
+    <br>
+
+    <p style="font-size: 1.5em"><strong>{{ sloveneWords.join(' ') + punctuation }}</strong></p>
+    <p>{{ hint }}</p>
   
-    <p><strong>{{ sloveneWords.join(' ') }}</strong></p>
-    <p>Hint: {{ hint }}</p>
-  
-    <input [(ngModel)]="userInput" placeholder="Enter the missing word" />
+    <br>
+
+    <input (keydown.enter)="checkAnswer()" [(ngModel)]="userInput" placeholder="Enter the missing word" />
     <button (click)="checkAnswer()">Check</button>
-  </div>  
+</div>  
