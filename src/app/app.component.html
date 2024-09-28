@@ -1,9 +1,11 @@
 <!-- src/app/app.component.html -->
-<mat-toolbar color="primary">
-  <button mat-icon-button (click)="sidenav.toggle()" class="menu-button">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>My Angular App</span>
+<mat-toolbar class="toolbar">
+    <button mat-icon-button (click)="sidenav.toggle()" class="menu-button">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span><b>Simple SLO app</b></span>
+    <span class="toolbar-spacer"></span>
+    <span class="toolbar-practice-title">{{ title }}</span>
 </mat-toolbar>
 
 <mat-sidenav-container class="sidenav-container">

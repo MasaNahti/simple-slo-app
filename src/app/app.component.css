@@ -10,3 +10,11 @@
 .menu-button {
   display: inline; 
 }
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-practice-title {
+  color: whitesmoke
+}
