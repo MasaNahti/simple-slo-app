@@ -1,22 +1,28 @@
-// src/app/practice/practice.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';  // Import FormsModule
+import { ReactiveFormsModule, FormControl } from '@angular/forms';  // Import FormsModule
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatButton } from '@angular/material/button';
+import { MatCard, MatCardContent } from '@angular/material/card';
 
 @Component({
   selector: 'app-missing-word',
   templateUrl: './missing-word.component.html',
   styleUrls: ['./missing-word.component.css'],
   standalone: true,
-  imports: [FormsModule],  // Add FormsModule here to use ngModel
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatFormField, MatLabel, MatButton, MatCard, MatCardContent],  // Add FormsModule here to use ngModel
 })
 export class MissingWordComponent implements OnInit {
+  title = 'simple-slo-app';
+
+  userInput = new FormControl('');
+
   translations: any[] = [];
   currentTranslation: any;
   sloveneWords: string[] = [];
   missingWord: string = '';
-  userInput: string = '';
   hint: string = '';
   punctuation: string = '';
 
@@ -58,11 +64,11 @@ export class MissingWordComponent implements OnInit {
 
     this.hint = this.currentTranslation.english;
     this.sloveneWords[randomWordIndex] = '____';  // Blank for the user to fill in
-    this.userInput = '';
+    this.userInput.patchValue('');
   }
 
   checkAnswer(): void {
-    if (this.userInput.trim().toLowerCase() === this.missingWord.toLowerCase()) {
+    if (this.userInput.value && this.userInput.value.trim().toLowerCase() === this.missingWord.toLowerCase()) {
       alert('Correct!');
       this.loadNewSentence();
     } else {
