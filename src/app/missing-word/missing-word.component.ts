@@ -6,13 +6,26 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButton } from '@angular/material/button';
 import { MatCard, MatCardContent } from '@angular/material/card';
+import { MatIcon } from '@angular/material/icon';
+import { NgIf } from '@angular/common'; // Add this for structural directives
 
 @Component({
   selector: 'app-missing-word',
   templateUrl: './missing-word.component.html',
   styleUrls: ['./missing-word.component.css'],
   standalone: true,
-  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatFormField, MatLabel, MatButton, MatCard, MatCardContent],  // Add FormsModule here to use ngModel
+  imports: [
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatFormField,
+    MatLabel,
+    MatButton,
+    MatCard,
+    MatCardContent,
+    MatIcon,
+    NgIf
+  ],  // Add FormsModule here to use ngModel
 })
 export class MissingWordComponent implements OnInit {
   title = 'simple-slo-app';
@@ -27,6 +40,7 @@ export class MissingWordComponent implements OnInit {
   partTwo: string = '';
   hint: string = '';
   punctuation: string = '';
+  correct: boolean = false;
 
   constructor(private http: HttpClient) {}
 
@@ -52,6 +66,7 @@ export class MissingWordComponent implements OnInit {
 
 
   loadNewSentence(): void {
+    this.correct = false;
     const randomIndex = Math.floor(Math.random() * this.translations.length);
     this.currentTranslation = this.translations[randomIndex];
 
@@ -79,10 +94,9 @@ export class MissingWordComponent implements OnInit {
 
   checkAnswer(): void {
     if (this.missingWordInput.value && this.missingWordInput.value.trim().toLowerCase() === this.missingWord.toLowerCase()) {
-      alert('Correct!');
-      this.loadNewSentence();
+      this.correct = true;
     } else {
-      alert(`Incorrect. The correct word was: "${this.missingWord}"`);
+      this.correct = false;
     }
   }
 

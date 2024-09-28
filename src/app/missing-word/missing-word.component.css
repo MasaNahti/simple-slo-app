@@ -29,3 +29,9 @@
 .missing-word-form {
   flex: 1 1 auto;
 }
+
+.correct-icon {
+  font-weight: bold;
+  color: #86c722;
+  font-size: x-large;
+}
