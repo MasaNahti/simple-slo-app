@@ -1,24 +1,31 @@
-.container {
+.missing-words-card {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 1em auto 1em;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
-  }
+    background-color: whitesmoke;
   
+    mat-form-field {
+      height: 4em;
+    }
+
   input {
-    padding: 5px;
-    margin: 10px;
-    width: 250px;
-    height: 50px;
-    font-size: 1.5em;
+    width: auto;
+    height: 2em;
+    font-size: 1.25em;
+    text-align: center;
   }
   
   button {
     padding: 5px 10px;
     cursor: pointer;
   }
-  
-  slo-sentence {
-    font-size: 1.50em;
-  }
+}
+
+.slo-sentence {
+  font-size: 1.25em;
+}
+
+.missing-word-form {
+  flex: 1 1 auto;
+}

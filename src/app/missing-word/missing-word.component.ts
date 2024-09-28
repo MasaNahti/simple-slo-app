@@ -17,12 +17,14 @@ import { MatCard, MatCardContent } from '@angular/material/card';
 export class MissingWordComponent implements OnInit {
   title = 'simple-slo-app';
 
-  userInput = new FormControl('');
+  missingWordInput = new FormControl('');
 
   translations: any[] = [];
   currentTranslation: any;
   sloveneWords: string[] = [];
   missingWord: string = '';
+  partOne: string = '';
+  partTwo: string = '';
   hint: string = '';
   punctuation: string = '';
 
@@ -53,26 +55,38 @@ export class MissingWordComponent implements OnInit {
     const randomIndex = Math.floor(Math.random() * this.translations.length);
     this.currentTranslation = this.translations[randomIndex];
 
-    let splitPunctuation, strippedTranslation, punctuation;
+    let splitPunctuation, strippedTranslation;
     splitPunctuation = this.splitPunctuation(this.currentTranslation.slovene);
     strippedTranslation = splitPunctuation["sentence"];
     this.punctuation = splitPunctuation["punctuation"];
     
-    this.sloveneWords = strippedTranslation.split(' ');
-    const randomWordIndex = Math.floor(Math.random() * this.sloveneWords.length);
-    this.missingWord = this.sloveneWords[randomWordIndex];
+    let sloveneWords = strippedTranslation.split(' ');
+    const randomWordIndex = Math.floor(Math.random() * sloveneWords.length);
+    this.missingWord = sloveneWords[randomWordIndex];
 
+    this.partOne = randomWordIndex > 0 ? sloveneWords.slice(0,randomWordIndex).join(' ')+' ' : ''
+    this.partTwo = randomWordIndex < sloveneWords.length - 1 ? ' '+sloveneWords.slice(randomWordIndex+1).join(' ') : ''
+    if (this.missingWord.endsWith(',')) {
+      this.missingWord.slice(0,-1);
+      this.partTwo = ',' + this.partTwo;
+    }
+
+    console.log(this.partOne + this.missingWord + this.partTwo)
     this.hint = this.currentTranslation.english;
-    this.sloveneWords[randomWordIndex] = '____';  // Blank for the user to fill in
-    this.userInput.patchValue('');
+    //this.sloveneWords[randomWordIndex] = '____';  // Blank for the user to fill in
+    this.missingWordInput.patchValue('');
   }
 
   checkAnswer(): void {
-    if (this.userInput.value && this.userInput.value.trim().toLowerCase() === this.missingWord.toLowerCase()) {
+    if (this.missingWordInput.value && this.missingWordInput.value.trim().toLowerCase() === this.missingWord.toLowerCase()) {
       alert('Correct!');
       this.loadNewSentence();
     } else {
       alert(`Incorrect. The correct word was: "${this.missingWord}"`);
     }
+  }
+
+  showAnswer() {
+    this.missingWordInput.patchValue(this.missingWord)
   }
 }

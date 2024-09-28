@@ -1,20 +1,17 @@
-<div class="container">
-    <mat-card style="background-color: whitesmoke" appearance="outlined">
-        <mat-card-content>    
-            <p style="font-size: 1.25em"><strong>{{ sloveneWords.join(' ') + punctuation }}</strong></p>
-            <p>{{ hint }}</p>
-        </mat-card-content>
-      </mat-card>
-
-  
-    <br>
-
-    <form class="example-form">
-        <mat-form-field class="example-full-width">
-          <mat-label>Enter the missing word</mat-label>
-          <input matInput (keydown.enter)="checkAnswer()"[formControl]="userInput">
-        </mat-form-field>
-    </form>
-    <button mat-raised-button (click)="checkAnswer()">Check</button>
-
+<div >
+  <mat-card class="missing-words-card" appearance="outlined">
+    <mat-card-content>    
+        <form class="missing-word-form">
+          <span class="slo-sentence">{{ partOne }}</span>
+          <mat-form-field class="example-full-width">
+            <input matInput (keydown.enter)="checkAnswer()"[formControl]="missingWordInput">
+          </mat-form-field>
+          <span class="slo-sentence">{{ partTwo + punctuation }}</span>
+      </form>
+      <span>{{ hint }}</span>
+      <button mat-raised-button (click)="checkAnswer()">Check</button>
+      <button mat-raised-button (click)="showAnswer()">Show</button>
+      <button mat-raised-button (click)="loadNewSentence()">Next</button>
+    </mat-card-content>
+  </mat-card>
 </div>  
