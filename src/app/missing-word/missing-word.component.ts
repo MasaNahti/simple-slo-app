@@ -5,13 +5,13 @@ import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';  // Import FormsModule
 
 @Component({
-  selector: 'app-practice',
-  templateUrl: './practice.component.html',
-  styleUrls: ['./practice.component.css'],
+  selector: 'app-missing-word',
+  templateUrl: './missing-word.component.html',
+  styleUrls: ['./missing-word.component.css'],
   standalone: true,
   imports: [FormsModule],  // Add FormsModule here to use ngModel
 })
-export class PracticeComponent implements OnInit {
+export class MissingWordComponent implements OnInit {
   translations: any[] = [];
   currentTranslation: any;
   sloveneWords: string[] = [];

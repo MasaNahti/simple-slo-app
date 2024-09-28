@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PracticeComponent } from './practice.component';
+import { MissingWordComponent } from './missing-word.component';
 
-describe('PracticeComponent', () => {
-  let component: PracticeComponent;
-  let fixture: ComponentFixture<PracticeComponent>;
+describe('MissingWordComponent', () => {
+  let component: MissingWordComponent;
+  let fixture: ComponentFixture<MissingWordComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PracticeComponent]
+      imports: [MissingWordComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PracticeComponent);
+    fixture = TestBed.createComponent(MissingWordComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
