@@ -67,7 +67,7 @@ export class MissingWordComponent implements OnInit {
     this.partOne = randomWordIndex > 0 ? sloveneWords.slice(0,randomWordIndex).join(' ')+' ' : ''
     this.partTwo = randomWordIndex < sloveneWords.length - 1 ? ' '+sloveneWords.slice(randomWordIndex+1).join(' ') : ''
     if (this.missingWord.endsWith(',')) {
-      this.missingWord.slice(0,-1);
+      this.missingWord = this.missingWord.slice(0,-1);
       this.partTwo = ',' + this.partTwo;
     }
 
