@@ -1,17 +1,17 @@
 .missing-words-card {
-    max-width: 600px;
-    margin: 1em auto 1em;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: whitesmoke;
-  
-    mat-form-field {
-      height: 4em;
-    }
+  max-width: 600px;
+  margin: 1em auto 1em;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: whitesmoke;
+
+  mat-form-field {
+    height: 4em;
+    width: auto;
+  }
 
   input {
-    width: auto;
-    height: 2em;
+    width: 100%;
     font-size: 1.25em;
     text-align: center;
   }
