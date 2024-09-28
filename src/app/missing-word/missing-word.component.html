@@ -3,12 +3,12 @@
     <mat-card-content>    
         <form class="missing-word-form">
           <span class="slo-sentence">{{ partOne }}</span>
-          <mat-form-field class="example-full-width">
-            <input matInput (keydown.enter)="checkAnswer()"[formControl]="missingWordInput">
+          <mat-form-field>
+            <input matInput autofocus (keydown.enter)="checkAnswer()"[formControl]="missingWordInput">
           </mat-form-field>
           <span class="slo-sentence">{{ partTwo + punctuation }}</span>
       </form>
-      <span>{{ hint }}</span>
+      <span>{{ hint }} </span>
       <button mat-raised-button (click)="checkAnswer()">Check</button>
       <button mat-raised-button (click)="showAnswer()">Show</button>
       <button mat-raised-button (click)="loadNewSentence()">Next</button>
