@@ -35,3 +35,9 @@
   color: #86c722;
   font-size: x-large;
 }
+
+.incorrect-icon {
+  font-weight: bold;
+  color: red;
+  font-size: x-large;
+}

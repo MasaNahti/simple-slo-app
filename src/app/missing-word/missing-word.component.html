@@ -4,10 +4,16 @@
         <div class="missing-word-div">
           <span class="slo-sentence">{{ partOne }}</span>
           <mat-form-field>
-            <input matInput autofocus (keydown.enter)="checkAnswer()"[formControl]="missingWordInput">
+            <input 
+            matInput
+            autofocus
+            (keydown.enter)="checkAnswer()"
+            [formControl]="missingWordInput">
           </mat-form-field>
+          <mat-icon *ngIf="correct == true" class="correct-icon" aria-hidden="false" aria-label="correct" fontIcon="done"></mat-icon>
+          <mat-icon *ngIf="correct == false" class="incorrect-icon" aria-hidden="false" aria-label="incorrect" fontIcon="report_problem"></mat-icon>
           <span class="slo-sentence">{{ partTwo + punctuation }}</span>
-          <mat-icon *ngIf="correct" class="correct-icon" aria-hidden="false" aria-label="correct" fontIcon="done"></mat-icon>
+          
         </div>
       <span>{{ hint }} </span>
       <button mat-raised-button (click)="checkAnswer()">Check</button>

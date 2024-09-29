@@ -39,7 +39,7 @@ export class MissingWordComponent implements OnInit {
   partTwo: string = '';
   hint: string = '';
   punctuation: string = '';
-  correct: boolean = false;
+  correct: boolean | null = null;
 
   constructor(private http: HttpClient) {}
 
@@ -65,7 +65,7 @@ export class MissingWordComponent implements OnInit {
 
 
   loadNewSentence(): void {
-    this.correct = false;
+    this.correct = null;
     const randomIndex = Math.floor(Math.random() * this.translations.length);
     this.currentTranslation = this.translations[randomIndex];
 
