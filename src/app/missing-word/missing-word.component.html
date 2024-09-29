@@ -1,14 +1,14 @@
 <div >
   <mat-card class="missing-words-card" appearance="outlined">
     <mat-card-content>    
-        <form class="missing-word-form">
+        <div class="missing-word-div">
           <span class="slo-sentence">{{ partOne }}</span>
           <mat-form-field>
             <input matInput autofocus (keydown.enter)="checkAnswer()"[formControl]="missingWordInput">
           </mat-form-field>
           <span class="slo-sentence">{{ partTwo + punctuation }}</span>
           <mat-icon *ngIf="correct" class="correct-icon" aria-hidden="false" aria-label="correct" fontIcon="done"></mat-icon>
-      </form>
+        </div>
       <span>{{ hint }} </span>
       <button mat-raised-button (click)="checkAnswer()">Check</button>
       <button mat-raised-button (click)="showAnswer()">Show</button>
