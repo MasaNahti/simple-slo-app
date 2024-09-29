@@ -2,13 +2,15 @@ import { Component, ViewChild } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { Router } from '@angular/router';
 import { Location } from "@angular/common";
-import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
-import { MatToolbar } from '@angular/material/toolbar';
-import { MatIcon } from '@angular/material/icon';
-import { MatList, MatNavList } from '@angular/material/list';
-import { MatTab } from '@angular/material/tabs';
-import { MatButton } from '@angular/material/button';
+import { MatSidenav } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
 import { NgIf } from '@angular/common'; // Add this for structural directives
+
 
 @Component({
   selector: 'app-root',
@@ -17,15 +19,12 @@ import { NgIf } from '@angular/common'; // Add this for structural directives
   styleUrls: ['./app.component.css'],
   imports: [ 
     RouterOutlet, RouterLink, RouterLinkActive,
-    MatToolbar,
-    MatSidenav,
-    MatSidenavContainer,
-    MatSidenavContent,
-    MatIcon,
-    MatList,
-    MatNavList,
-    MatTab,
-    MatButton,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatTabsModule,
+    MatButtonModule,
     NgIf // Import common module for structural directives like *ngIf or *ngFor
   ]
 })
