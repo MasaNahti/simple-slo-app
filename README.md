@@ -12,7 +12,7 @@ Run `npm run generate component component-name` to generate a new component. You
 
 ## Build
 
-Run `npm run build --output-path=docs --base-href=/simple-slo-app/` to build the project. The build artifacts will be stored in the `docs/` directory.
+Run `npm run build` to build the project. The build artifacts will be stored in the `docs/` directory.
 
 ## Publish
 
