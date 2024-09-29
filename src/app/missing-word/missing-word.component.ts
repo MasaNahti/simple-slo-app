@@ -90,6 +90,14 @@ export class MissingWordComponent implements OnInit {
     //this.sloveneWords[randomWordIndex] = '____';  // Blank for the user to fill in
     this.missingWordInput.patchValue('');
   }
+  onEnter() {
+    if (this.correct == true) {
+      this.loadNewSentence()
+    }
+    else {
+      this.checkAnswer()
+    }
+  }
 
   checkAnswer(): void {
     if (this.missingWordInput.value && this.missingWordInput.value.trim().toLowerCase() === this.missingWord.toLowerCase()) {

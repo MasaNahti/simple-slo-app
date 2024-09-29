@@ -7,7 +7,7 @@
             <input 
             matInput
             autofocus
-            (keydown.enter)="checkAnswer()"
+            (keydown.enter)="onEnter()"
             [formControl]="missingWordInput">
           </mat-form-field>
           <mat-icon *ngIf="correct == true" class="correct-icon" aria-hidden="false" aria-label="correct" fontIcon="done"></mat-icon>
