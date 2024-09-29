@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';  // Import FormsModule
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButton } from '@angular/material/button';
 import { MatCard, MatCardContent } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
@@ -16,7 +15,7 @@ import { NgIf } from '@angular/common'; // Add this for structural directives
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    MatFormFieldModule,
+    MatFormField,
     MatInputModule,
     MatFormField,
     MatLabel,
