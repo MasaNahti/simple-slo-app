@@ -13,7 +13,7 @@
 $simple-slo-app-theme: mat.define-theme((
   color: (
     theme-type: light,
-    primary: mat.$green-palette,
+    primary: mat.$orange-palette,
   ),
   density: (
     scale: 0,
@@ -30,8 +30,8 @@ $simple-slo-app-theme: mat.define-theme((
 .toolbar {
   // Override the checkbox hover state to indicate that this is a dangerous setting. No need to
   // target the internal selectors for the elements that use these variables.
-  --mat-toolbar-container-background-color: #50932691;
-  --mat-toolbar-title-text-font: "Audiowide", sans-serif
+  --mat-toolbar-container-background-color: #e69502;
+  --mat-toolbar-title-text-font: "Audiowide", sans-serif;
 }
 
 // Comment out the line below if you want to use the pre-defined typography utility classes.

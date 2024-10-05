@@ -1,14 +1,11 @@
 <!-- src/app/app.component.html -->
 <mat-toolbar class="toolbar">
-    <button mat-icon-button (click)="sidenav.toggle()" class="menu-button">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span><b>Simple SLO app</b></span>
-    <span class="toolbar-spacer"></span>
-    <span class="toolbar-practice-title">{{ title }}</span>
+    <div (click)="sidenav.toggle()" class="toolbar-logo">
+      <img src="/assets/images/ssup-menu.png" class="toolbar-logo">
+    </div>
 </mat-toolbar>
 
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container >
   <mat-sidenav #sidenav mode="over" class="sidenav" role="navigation">
     <mat-nav-list>
       <a mat-list-item routerLink="/" (click)="sidenav.close()">Home</a>
@@ -16,7 +13,7 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content>
+  <mat-sidenav-content class="app-background">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -4,17 +4,23 @@
 }
 
 .sidenav {
-  width: 200px;
+  width: 250px;
 }
 
-.menu-button {
-  display: inline; 
+.mat-sidenav-container .app-background {
+  background-image: url('/assets/images/simple_app_background_fantasyland.png') !important;
+  height: 100vh !important; /* Full viewport height */
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
-.toolbar-spacer {
-  flex: 1 1 auto;
-}
+.toolbar-logo {
+  @media (min-width: 600px) {
+    height: 64px; 
+  }
+  @media (max-width: 599px) {
+    height: 56px; 
+  }
 
-.toolbar-practice-title {
-  color: whitesmoke
 }
