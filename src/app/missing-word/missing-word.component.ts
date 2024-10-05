@@ -44,7 +44,7 @@ export class MissingWordComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('assets/slovene-translations.json').subscribe(data => {
+    this.http.get<any[]>('assets/sentences.json').subscribe(data => {
       this.translations = data;
       this.loadNewSentence();
     });
