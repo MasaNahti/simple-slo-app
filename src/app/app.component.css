@@ -7,20 +7,12 @@
   width: 250px;
 }
 
-.mat-sidenav-container .app-background {
-  background-image: url('/assets/images/simple_app_background_fantasyland.png') !important;
-  height: 100vh !important; /* Full viewport height */
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
+.toolbar-logo {
+  height: 7vh;
+  padding-top:0.5vh;
+  padding-bottom:0.5vh;
 }
 
-.toolbar-logo {
-  @media (min-width: 600px) {
-    height: 64px; 
-  }
-  @media (max-width: 599px) {
-    height: 56px; 
-  }
-
+.mat-toolbar-row, .mat-toolbar-single-row {
+  padding: 8px;
 }

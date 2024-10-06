@@ -25,14 +25,25 @@ $simple-slo-app-theme: mat.define-theme((
 // that you are using.
 :root {
   @include mat.all-component-themes($simple-slo-app-theme);
+  --background-image-url: url('assets/images/simple_app_background_fantasyland.png');
 }
 
 .toolbar {
   // Override the checkbox hover state to indicate that this is a dangerous setting. No need to
   // target the internal selectors for the elements that use these variables.
-  --mat-toolbar-container-background-color: #e69502;
-  --mat-toolbar-title-text-font: "Audiowide", sans-serif;
+  --mat-toolbar-container-background-color: #3d3b67;
+  --mat-toolbar-standard-height: 8vh;
+  --mat-toolbar-mobile-height: 8vh;
 }
+
+.mat-sidenav-container .app-background {
+  background-image: var(--background-image-url);
+  background-size: cover;
+  background-position: center;
+  min-height: 92vh;
+  background-repeat: no-repeat;
+}
+
 
 // Comment out the line below if you want to use the pre-defined typography utility classes.
 // For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
