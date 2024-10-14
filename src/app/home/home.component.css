@@ -1,0 +1,16 @@
+.home-card {
+    max-width: 600px;
+    margin: 1em auto 1em;
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+    margin: 1rem;
+
+    @media (min-width: 600px) {
+        font-size: xx-large;
+    }
+
+    @media (max-width: 599px) {
+    font-size: large;
+    }
+  }
