@@ -26,10 +26,6 @@
   font-size: 1.25em;
 }
 
-.missing-word-div {
-  flex: 1 1 auto;
-}
-
 .correct-icon {
   font-weight: bold;
   color: #86c722;
